@@ -1,166 +1,37 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
+# Functions - Problem Set
 
-#Functions
+These problems will use your knowledge of looping and conditionals, and we will build functions on top of that.
 
-##Objectives
-* Define a function
-* Define a function with a parameter
-* Define a function that operates on two parameters
-* Understand the difference between printing and returning
-* Create functions with and without return values
-* Recognize the scope of variables inside and outside functions
 
-##Defining a function
+##letterCount(word)
 
-A function is a module that can store and invoke code. When writing repetitive code, we can isolate code into **functions** in order to reduce repetition. For example, if we needed to say "Hello World" to the screen multiple times, we can create a function like so.
-
-```js
-var greeting = function() {
-	console.log("Hello World");
-}
-
-greeting();
-```
-
-Note that a function is assigned to a variable, and we can **call** the function by taking the variable name and appending parentheses to the end of the function variable.
-
-**Parts of a function**
+Write a function that takes a string that finds out how many times a character occurs.  For example, the string "apple" would print the following:
 
 ```
-var FUNCTIONNAME = function() {
-	//CODE
-}
+a - 1
+p - 2
+l - 1
+e - 1
 ```
 
-We can also create functions that accept **parameters**, and use those parameters as variables in the function.
+**Hint**: Loop through each letter, and increment the value to a key in an object. The key should be that object.
 
-##Defining a function with a parameter
-```js
-var greeting = function(taco) {
-	// anything inside of here will execute when called
-	console.log("Good morning", taco);
-}
+**BONUS**: Make sure that lower case letters and upper case letters count for the same character.  Also, ignore spaces and punctuation.
 
-var name = "Josh"
-var name2 = "Brian"
-greeting(name);
-greeting(name2);
-```
+##sillySum(arr)
+Write a function that takes an array of numbers, and returns the sum of each number multiplied by its index. 
 
-##Defining a function with two parameters
+`count += (number * index)`
 
-Functions can have multiple parameters, separated by commas.
+##isPrime(num)
+Create a function to return `true` or `false` if a number passed in a prime number.
 
-```js
-var greeting = function(taco, stuff) {
-	// anything inside of here will execute when called
-	console.log("Good morning", stuff, taco);
-	console.log("taco:", taco);
-	console.log("stuff:", stuff);
-}
+##primes(max)
+Using your `isPrime()` function, create a function `primes` that will return an array of all prime numbers up to a certain amount.
 
-var name = "Josh"
-var name2 = "Brian"
-greeting(name, name2);
-greeting(name2, name);
-```
+##numSquare(max)
+Create a function called `numSquare` that will return an array of all perfect square numbers up to, but not exceeding a max number.
 
-##Printing and returning are different
+##merge(arr1, arr2)
 
-Note that functions can have **input** via parameters. They can also have **output** as return values. Returning values from a function is denoted by the keyword `return`. Also, return values are optional.
-
-Note that printing something to the screen using `console.log` is not the same as returning values.
-
-```js
-var multiply = function(num1, num2) {
-	console.log("inside the function");
-	// return result = num1 * num2;
-	return num1 * num2
-}
-
-var firstNum = 2;
-var secNum = 3;
-var taco = multiply(firstNum,secNum);
-
-console.log(firstNum + " multiplied by " + secNum + " is " + taco )
-```
-
-```js
-// With a return value
-var returnHello = function (name) {
-	return("Hello, " + name)
-}
-
-console.log("with a return value:", returnHello("jane") );
-
-// Without a return value
-var returnHello2 = function(name) {
-	console.log("inside returnHello2: Hello, " + name);
-}
-returnHello2("nachos");
-console.log("without a return value:", returnHello2("taco") ); //will show as undefined
-```
-
-##Declaring functions
-
-There are two different ways to declare a function
-```js
-var multiply = function(a, b) {
-	return a * b;
-}
-
-function multiply(a, b) {
-	return a * b;
-}
-```
-
-The difference between these two is that the first one is defined at run-time, meaning that if we try to call the function before it's declared, an error will be thrown:
-```js
-multiply(2, 2); // ERROR
-
-var multiply = function(a, b) {
-	return a * b;
-}
-```
-
-The second declaration is defined at parse-time, so we can call the function wherever we'd like.
-```js
-multiply(2, 2); // success
-
-function multiply(a, b) {
-	return a * b;
-}
-```
-
-Despite being more flexible, the former declaration that assigns the function to a variable is more common when developing Node applications.
-
-###Exercises
-
-1. What is the return value of this function when called?
-
-```js
-var lightsabers = function(num) {
-	console.log('I have ' + num + ' lightsabers.');
-}
-
-lightsabers(2);
-```
-
-2. How would the function above be modified if the user wanted to pass in an object of lightsabers, like this one?
-
-```js
-var myLightsaberCollection = {
-	blue: 1,
-	green: 3
-}
-
-var lightsabers = function(lightsaberCollection) {
-	//code here
-}
-
-lightsabers(myLightsaberCollection);
-
-// Output
-// I have 1 blue lightsaber
-// I have 3 green lightsabers
-```
+Write a function called ```merge```.  The function should take two sorted arrays of numbers as input and return a merged array of the sorted numbers from the input.  For example, if the input arrays were `var arr1 = [3,6,11]; var arr2 = [2,4,5,8,9];`  Then the returned array would be: `[2,3,4,5,6,8,9,11]`.
