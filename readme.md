@@ -2,6 +2,18 @@
 
 These problems will use your knowledge of looping and conditionals, and we will build functions on top of that.
 
+## Getting Started
+
+* Fork and clone this repository
+* Run `npm install` to install dependencies
+* Solve the problems below in separate files, located in `src/js`
+* Run `node src/js/nameOfFile.js` to execute code
+* Run `npm run lint:js` to lint your code
+
+---
+
+##Problems
+
 ###letterCount(word)
 
 Write a function that takes a string that finds out how many times a character occurs.  For example, the string "apple" would print the following:
