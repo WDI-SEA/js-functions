@@ -6,8 +6,8 @@ These problems will use your knowledge of looping and conditionals, and we will 
 
 * Fork and clone this repository
 * Run `npm install` to install dependencies
-* Solve the problems below in separate files, located in `src/js`
-* Run `node src/js/nameOfFile.js` to execute code
+* Solve the problems below in separate files, located in `js`
+* Run `node js/nameOfFile.js` to execute code
 * Run `npm run lint:js` to lint your code
 
 ---
